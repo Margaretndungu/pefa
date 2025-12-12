@@ -103,3 +103,13 @@
         font-size: 0.9rem;
     }
 }
+/* MOBILE FIX — allow table to scroll instead of breaking */
+@media screen and (max-width: 768px) {
+    .fellowship-section {
+        overflow-x: auto;
+    }
+
+    .fellowship-table {
+        width: 600px; /* minimum width so columns stay readable */
+    }
+}
