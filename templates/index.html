@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEFA KIMBO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+<!-- <nav class="navbar">
+        <div class="logo">PEFA KIMBO</div>
+    </nav> --!>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/banner2.jpg') }}" alt="Banner">
+        </div>
+
+        <div class="hero-text">
+            <h1>WELCOME TO PEFA KIMBO</h1>
+        </div>
+    </section>
+
+    <!-- MAIN CARDS -->
+<section class="cards">
+
+    <div class="card">
+        <a href="{{ url_for('first_time') }}" style="text-decoration: none; color: inherit;">
+            First Time Guests
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('prayer_request') }}" style="text-decoration: none; color: inherit;">
+            Prayer Request
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('about_us') }}" style="text-decoration: none; color: inherit;">
+            About Us
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="{{ url_for('fellowships') }}" style="text-decoration: none; color: inherit;">
+            Fellowships
+        </a>
+    </div>
+
+</section>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+        <p>© 2025 PEFA KIMBO. All rights reserved.</p>
+<div class="social-icons">
+    <a href="<div class="social-icons">
+    <a href="https://www.facebook.com/pefakimboallnations" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+</div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/254710210400" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FLOATING INFO PANEL -->
+    <div class="floating-info">
+        <h4>Upcoming Events</h4>
+        <p>Sunday Service: 9:30 AM</p>
+        <p>Youth Meeting: Friday 5:30 PM</p>
+    </div>
+
+</body>
+</html>

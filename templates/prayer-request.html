@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Request - PEFA KIMBO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='prayer-request.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        PEFA KIMBO
+    </header>
+
+    <!-- Prayer Request Section -->
+    <section class="form-container">
+        <h2>Prayer Request</h2>
+        <p>We believe in the power of prayer. Submit your prayer requests here and our prayer team will pray for you.</p>
+
+        <form method="POST" action="{{ url_for('prayer_request') }}">
+            <div class="form-group">
+                <label for="name">Your Name (optional):</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email (optional):</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="prayer_request">Prayer Request:</label>
+                <textarea id="prayer_request" name="prayer_request" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Submit Request</button>
+			<a href="{{ url_for('index') }}" class="back-button">Back to Home</a>
+        </form>
+    </section>
+
+</body>
+</html>

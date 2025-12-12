@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fellowships Admin - PEFA KIMBO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fellowships.css') }}">
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>Fellowships Admin</h1>
+        <p>Edit fellowship names and meeting locations</p>
+    </header>
+
+    <section class="fellowship-section">
+        <form method="POST">
+            <table class="fellowship-table" id="fellowshipTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fellowship Name</th>
+                        <th>Meeting Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fellowship in fellowships %}
+                    <tr>
+                        <td class="row-number">{{ loop.index }}</td>
+                        <td><input type="text" name="name" value="{{ fellowship.name }}"></td>
+                        <td><input type="text" name="location" value="{{ fellowship.location }}"></td>
+                        <td>
+                            <button type="submit" name="save_row" value="{{ loop.index0 }}"
+                                style="background-color:#007bff; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">
+                                Save
+                            </button>
+                            <button type="button" onclick="deleteRow(this)"
+                                style="background-color:#dc3545; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div style="text-align:center; margin: 15px;">
+                <button type="button" onclick="addRow()" 
+                    style="padding: 8px 15px; background-color:#28a745; color:white; border:none; border-radius:5px; cursor:pointer;">
+                    Add New Row
+                </button>
+            </div>
+
+            <div style="text-align:center; margin: 15px;">
+                <button type="submit" 
+                    style="padding: 10px 25px; background-color:#007bff; color:white; border:none; border-radius:5px; cursor:pointer;">
+                    Save All Changes
+                </button>
+            </div>
+        </form>
+    </section>
+
+<script>
+function addRow() {
+    const tableBody = document.getElementById('fellowshipTable').getElementsByTagName('tbody')[0];
+    const newRow = tableBody.insertRow();
+
+    const cell0 = newRow.insertCell(0);
+    const cell1 = newRow.insertCell(1);
+    const cell2 = newRow.insertCell(2);
+    const cell3 = newRow.insertCell(3);
+
+    cell0.className = "row-number";
+    cell1.innerHTML = '<input type="text" name="name" value="">';
+    cell2.innerHTML = '<input type="text" name="location" value="">';
+    cell3.innerHTML = `
+        <button type="submit" name="save_row" value="${tableBody.rows.length - 1}"
+            style="background-color:#007bff; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">
+            Save
+        </button>
+        <button type="button" onclick="deleteRow(this)"
+            style="background-color:#dc3545; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">
+            Delete
+        </button>
+    `;
+
+    renumberRows();
+}
+
+function deleteRow(btn) {
+    const row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+    renumberRows();
+}
+
+function renumberRows() {
+    const rows = document.querySelectorAll('#fellowshipTable tbody tr');
+    rows.forEach((r, index) => {
+        r.querySelector('.row-number').innerText = index + 1;
+    });
+}
+</script>
+
+</body>
+</html>

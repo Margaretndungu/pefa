@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f8ff; /* light blue page background */
+    color: #333;
+    text-align: center; /* center all text */
+}
+
+header {
+    background-color: #007bff; /* blue header */
+    color: white;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #e6e3d9; /* dirty/off-white background */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.form-container h2, .form-container h3 {
+    color: #000000; /* black headings */
+    margin-bottom: 20px;
+}
+
+.form-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .back-button {
+        width: 100%;
+        padding: 12px 0;
+    }
+}

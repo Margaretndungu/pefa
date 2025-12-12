@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PEFA KIMBO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about-us.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        PEFA KIMBO
+    </header>
+
+    <!-- About Us Section -->
+    <section class="form-container">
+        <h2>About Us</h2>
+        <p>PEFA Kimbo is committed to helping individuals grow spiritually, serve the community, and live out Biblical teachings daily.</p>
+
+        <h3>Our History</h3>
+        <p>Founded to provide a welcoming church community, we have grown to serve multiple congregations and outreach programs.</p>
+
+        <h3>Our Programs</h3>
+        <p>We run Bible studies, youth groups, community services, and special events to nurture faith and fellowship.</p>
+
+        <a href="{{ url_for('index') }}" class="back-button">Back to Home</a>
+    </section>
+
+</body>
+</html>

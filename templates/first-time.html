@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Time Guests - PEFA KIMBO</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='first-time.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        PEFA KIMBO
+    </header>
+
+    <!-- First Time Guests Section -->
+    <section class="form-container">
+        <h2>Welcome to PEFA Kimbo!</h2>
+        <p>We're so glad you're here! Whether it's your first time or a returning visit, we want you to feel at home.</p>
+
+        <h3>What to Expect</h3>
+        <p>Our services are filled with uplifting worship, inspiring messages, and a welcoming community ready to greet you.</p>
+
+        <h3>Get Connected</h3>
+        <p>Join a small group, attend our events, or volunteer with us to meet new people and grow in faith.</p>
+
+        <h3>Need Prayer?</h3>
+        <p>Submit your prayer requests and our team will lift you up in prayer.</p>
+
+        <h3>Stay in Touch</h3>
+        <p>Follow us on social media and use our app to stay updated on events and news.</p>
+
+        <a href="{{ url_for('index') }}" class="back-button">Back to Home</a>
+    </section>
+
+</body>
+</html>

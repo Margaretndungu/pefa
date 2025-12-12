@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fellowships - PEFA KIMBO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fellowships.css') }}">
+</head>
+<body>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <h1>PEFA KIMBO – Fellowships</h1>
+        <p>Find your fellowship and where it meets.</p>
+    </header>
+
+    <!-- TABLE SECTION -->
+    <section class="fellowship-section">
+
+        <table class="fellowship-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fellowship Name</th>
+                    <th>Meeting Location</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for fellowship in fellowships %}
+                <tr>
+                    <td>{{ loop.index }}</td> <!-- Automatic numbering -->
+                    <td>{{ fellowship.name }}</td>
+                    <td>{{ fellowship.location }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
+
+</body>
+</html>

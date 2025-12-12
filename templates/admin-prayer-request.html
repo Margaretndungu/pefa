@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Prayer Requests</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='admin-prayer-request.css') }}">
+</head>
+<body>
+
+<header class="page-header">
+    <h1>Prayer Requests - Admin</h1>
+    <p>View and manage prayer requests submitted by users</p>
+</header>
+
+<section class="prayer-section">
+    <table class="prayer-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Request</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in prayer_requests %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ request.name }}</td>
+                <td>{{ request.email }}</td>
+                <td>{{ request.request }}</td>
+                <td>
+                    <form method="POST" style="display:inline;">
+                        <input type="hidden" name="delete_index" value="{{ loop.index0 }}">
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>
